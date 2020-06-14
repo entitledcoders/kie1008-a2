@@ -32,7 +32,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="gameengine.cpp" />
+		<Unit filename="gameengine.hpp" />
+		<Unit filename="gamestate.hpp" />
+		<Unit filename="iomanager.cpp" />
+		<Unit filename="iomanager.hpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="menustate.cpp" />
+		<Unit filename="menustate.hpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

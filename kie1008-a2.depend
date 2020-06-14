@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1592162990 source:d:\code\kie1008-a2\main.cpp
+	<iostream>
+	<stdlib.h>
+	"iomanager.hpp"
+	"gameengine.hpp"
+	"menustate.hpp"
+
+1592162990 d:\code\kie1008-a2\iomanager.hpp
+	<iostream>
+	<windows.h>
+	<conio.h>
+
+1592162990 d:\code\kie1008-a2\gameengine.hpp
+	<stack>
+
+1592162990 d:\code\kie1008-a2\menustate.hpp
+	"gamestate.hpp"
+
+1592162990 d:\code\kie1008-a2\gamestate.hpp
+	"gameengine.hpp"
+
+1592162990 source:d:\code\kie1008-a2\iomanager.cpp
+	"iomanager.hpp"
+

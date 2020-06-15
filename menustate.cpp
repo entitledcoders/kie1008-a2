@@ -20,20 +20,20 @@ void MenuState::HandleEvents(GameEngine* game)
             switch(this->option)
             {
             case START:
-                game.ChangeState();
+                //game.ChangeState();
                 break;
 
             case HELP:
-                game.ChangeState();
+                //game.ChangeState();
                 break;
 
             case EXIT:
-                game.Quit();
+                game->Quit();
             }
         }
 }
 
-void MenuState::Update(CGameEngine* game)
+void MenuState::Update(GameEngine* game)
 {
     int ch = io.getInput();
     {
@@ -44,7 +44,7 @@ void MenuState::Update(CGameEngine* game)
     }
 }
 
-void MenuState::Draw(CGameEngine* game)
+void MenuState::Draw(GameEngine* game)
 {
     io.clearScreen();
     cout << "          EE City Builder         " << endl;

@@ -23,3 +23,13 @@
 1592162990 source:d:\code\kie1008-a2\iomanager.cpp
 	"iomanager.hpp"
 
+1592205579 source:d:\code\kie1008-a2\mapmanager.cpp
+	"mapmanager.hpp"
+
+1592205579 d:\code\kie1008-a2\mapmanager.hpp
+	<iostream>
+	<fstream>
+	<vector>
+	<string>
+	<windows.h>
+

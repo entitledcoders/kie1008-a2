@@ -14,7 +14,7 @@ enum { ROW = 24, COL = 20, BIT = 2};
 class MapManager
 {
     public:
-        MapManager();
+        MapManager(string);
 
         void isExist();
         void New();
@@ -24,7 +24,7 @@ class MapManager
 
         string unit[ROW][COL];
     private:
-        string filepath = "map/save.txt";
+        string filepath;
 };
 
 #endif // MAPMANAGER_HPP

@@ -1,7 +1,10 @@
 #include "mapmanager.hpp"
 
-MapManager::MapManager()
-{}
+MapManager::MapManager(string path)
+{
+    filepath = path;
+    this->isExist();
+}
 
 void MapManager::isExist()
 {

@@ -24,7 +24,7 @@ enum eMenu
 };
 
 void gotoxy(int x,int y);
-void clearScreen();
+void recursor(int, int);
 int getInput();
 void ShowConsoleCursor(bool showFlag);
 

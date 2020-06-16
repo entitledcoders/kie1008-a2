@@ -5,7 +5,10 @@
 void GameEngine::ChangeState(GameState* state)
 {
 	// remove current running state (if available)
-	if ( !states.empty() ) { states.pop(); }
+	if ( !states.empty() ) {
+        system("CLS");
+        states.pop();
+    }
 
 	// push the new state in and run it
 	states.push(state);
@@ -28,6 +31,7 @@ void GameEngine::PopState()
 {
 	// cleanup the current state
 	if ( !states.empty() ) {
+        system("CLS");
 		states.pop();
 	}
 

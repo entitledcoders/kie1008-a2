@@ -5,19 +5,22 @@ MenuState MenuState::m_MenuState;
 
 void MenuState::Init()
 {
+    system("CLS");
     this->option = START;
 }
 
 void MenuState::Draw(GameEngine* game)
 {
-    clearScreen();
-    cout << "          EE City Builder         " << endl;
-    cout << "               Start              " << endl;
-    cout << "               Help               " << endl;
-    cout << "               Exit               " << endl;
+    recursor(0, 2);
+    cout << "   ------------------------------" << endl;
+    cout << "          EE City Builder        " << endl;
+    cout << "   ------------------------------" << endl;
+    cout << "              Start              " << endl;
+    cout << "              Help               " << endl;
+    cout << "              Exit               " << endl;
 
 
-    gotoxy(10, option + 1);
+    gotoxy(10, option + 5);
     cout << "->";
 }
 

@@ -8,14 +8,14 @@ using namespace std;
 
 int main()
 {
+    system("COLOR FC");
+
     // Define game class
     GameEngine game;
 
     // Initiate game class and get into main menu
     game.Init();                                    // Sets run mode to true
     game.ChangeState( MenuState::Instance() );      // Sets to menu state
-
-    cout << "Press any key to start...";            // To be replaced with intro
 
     // Starts game looping mechanism
     while( game.Running() )
@@ -25,7 +25,9 @@ int main()
         game.Update();
     }
 
-    clearScreen();
+    system("CLS");
+
+    cout << "Exiting the program...\n\n\n";
 
     return 0;
 }

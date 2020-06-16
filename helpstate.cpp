@@ -1,18 +1,20 @@
 #include "helpstate.hpp"
+#include <fstream>
 
 HelpState HelpState::m_HelpState;
 
 void HelpState::Init()
 {
-    clearScreen();
+    system("CLS");
     currentPage = 1;
 }
 
 void HelpState::Draw(GameEngine* game)
 {
-    clearScreen();
-    gotoxy(10,0);
-    cout << "Help (" << currentPage << "/" << page << ")" << endl;
+    recursor(0, 2);
+    cout << "   ------------------------------" << endl;
+    cout << "            Help (" << currentPage << "/" << page << ")" << endl;
+    cout << "   ------------------------------" << endl;
 }
 
 void HelpState::HandleEvents(GameEngine* game)

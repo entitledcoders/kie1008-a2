@@ -21,11 +21,11 @@ void ShowConsoleCursor(bool showFlag)
     SetConsoleCursorInfo(out, &cursorInfo);
 }
 
-// Clears screen
-void clearScreen()
+// Recursors
+void recursor(int x, int y)
 {
 	ShowConsoleCursor(false);
-	gotoxy(0,0);
+	gotoxy(x,y);
 }
 
 // Get input

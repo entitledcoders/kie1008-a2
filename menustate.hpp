@@ -8,8 +8,8 @@ class MenuState : public GameState
 public:
     void Init();
 
-    void Pause() {};
-    void Resume() {};
+    void Pause();
+    void Resume();
 
 	void HandleEvents(GameEngine* game);
 	void Update(GameEngine* game);
@@ -23,4 +23,4 @@ private:
 	static MenuState m_MenuState;
 };
 
-#endif // MENUSTATE_HPP
+#endif

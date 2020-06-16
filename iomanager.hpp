@@ -1,5 +1,5 @@
-#ifndef IOMANAGER_H
-#define IOMANAGER_H
+#ifndef IOMANAGER_HPP
+#define IOMANAGER_HPP
 
 #include <iostream>
 #include <windows.h>
@@ -22,15 +22,9 @@ enum eMenu
     SPACE = 32
 };
 
-class IOManager
-{
-public:
-    void gotoxy(int x,int y);
-    void clearScreen();
-    int getInput();
-
-private:
-    void ShowConsoleCursor(bool showFlag);
-};
+void gotoxy(int x,int y);
+void clearscreen();
+int getInput();
+void ShowConsoleCursor(bool showFlag);
 
 #endif // IOMANAGER_H

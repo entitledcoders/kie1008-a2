@@ -1,6 +1,6 @@
 #include "iomanager.hpp"
 
-void IOManager::gotoxy(int x,int y)
+void gotoxy(int x,int y)
 {
     COORD pos;
     pos.X = x;
@@ -8,7 +8,7 @@ void IOManager::gotoxy(int x,int y)
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),pos);
 }
 
-void IOManager::ShowConsoleCursor(bool showFlag)
+void ShowConsoleCursor(bool showFlag)
 {
     HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
 
@@ -19,13 +19,13 @@ void IOManager::ShowConsoleCursor(bool showFlag)
     SetConsoleCursorInfo(out, &cursorInfo);
 }
 
-void IOManager::clearScreen()
+void clearscreen()
 {
 	ShowConsoleCursor(false);
 	gotoxy(0,0);
 }
 
-int IOManager::getInput()
+int getInput()
 {
     int ch = _getch();
 

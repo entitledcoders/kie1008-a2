@@ -37,6 +37,12 @@ void GameEngine::PopState()
 	}
 }
 
+void GameEngine::Draw()
+{
+	// let the state draw the screen
+	states.top()->Draw(this);
+}
+
 void GameEngine::HandleEvents()
 {
 	// let the state handle events
@@ -47,10 +53,4 @@ void GameEngine::Update()
 {
 	// let the state update the game
 	states.top()->Update(this);
-}
-
-void GameEngine::Draw()
-{
-	// let the state draw the screen
-	states.top()->Draw(this);
 }

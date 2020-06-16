@@ -21,9 +21,9 @@ public:
 	void PopState();
 
     // Looping the three main processes
+    void Draw();
 	void HandleEvents();
 	void Update();
-	void Draw();
 
     // Get running state
 	bool Running() { return m_running; }

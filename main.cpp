@@ -20,9 +20,9 @@ int main()
     // Starts game looping mechanism
     while( game.Running() )
     {
+        game.Draw();
         game.HandleEvents();
         game.Update();
-        game.Draw();
     }
 
     clearScreen();

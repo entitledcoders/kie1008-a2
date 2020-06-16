@@ -9,12 +9,11 @@ using namespace std;
 int main()
 {
     GameEngine game;
-    IOManager io;
 
     game.Init();                                    // Sets run mode to true
     game.ChangeState( MenuState::Instance() );      // Enter introduction
 
-    io.clearScreen();
+    clearscreen();
 
     while( game.Running() )
     {
@@ -23,7 +22,7 @@ int main()
         game.Draw();
     }
 
-    io.clearScreen();
+    clearscreen();
 
     return 0;
 }

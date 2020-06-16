@@ -1,33 +1,41 @@
 #ifndef GAMEENGINE_HPP
 #define GAMEENGINE_HPP
-#include <stack>
+
+#include <vector>
 
 using namespace std;
 
-class GameState;
+class GameState;    // Forward declaration to avoid errors
 
 class GameEngine
 {
 public:
+    // Start of program, sets running to true
+	void Init() { m_running = true; };
 
-	void Init();
-
+    // Pops old state and pushes new state in (switch)
 	void ChangeState(GameState* state);
+
+	// Push and pop without removing previous state (for in-game menus)
 	void PushState(GameState* state);
 	void PopState();
 
+    // Looping the three main processes
 	void HandleEvents();
 	void Update();
 	void Draw();
 
-	bool Running() { return running; }
-	void Quit() { running = false; }
+    // Get running state
+	bool Running() { return m_running; }
+	// Set running to false when forcing to quit
+	void Quit() { m_running = false; }
 
 private:
-	// the stack of states
-	stack<GameState*> states;
+	// Stack of states
+	vector<GameState*> states;
 
-	bool running;
+	// Running state (true/false)
+	bool m_running;
 };
 
-#endif
+#endif // GAMEENGINE_HPP

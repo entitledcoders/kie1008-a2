@@ -19,7 +19,7 @@ void IOManager::ShowConsoleCursor(bool showFlag)
     SetConsoleCursorInfo(out, &cursorInfo);
 }
 
-void IOManager::clearscreen()
+void IOManager::clearScreen()
 {
 	ShowConsoleCursor(false);
 	gotoxy(0,0);

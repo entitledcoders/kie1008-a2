@@ -1,10 +1,9 @@
-#include <stdio.h>
+#include "menustate.hpp"
 #include "gameengine.hpp"
 #include "gamestate.hpp"
-#include "menustate.hpp"
 #include "iomanager.hpp"
 
-static MenuState m_MenuState;
+MenuState MenuState::m_MenuState;
 
 void MenuState::Init()
 {
@@ -35,6 +34,7 @@ void MenuState::HandleEvents(GameEngine* game)
 
 void MenuState::Update(GameEngine* game)
 {
+    IOManager io;
     int ch = io.getInput();
     {
         if(ch == DOWN)
@@ -46,6 +46,7 @@ void MenuState::Update(GameEngine* game)
 
 void MenuState::Draw(GameEngine* game)
 {
+    IOManager io;
     io.clearScreen();
     cout << "          EE City Builder         " << endl;
     cout << "               Start              " << endl;
@@ -53,6 +54,6 @@ void MenuState::Draw(GameEngine* game)
     cout << "               Exit               " << endl;
 
 
-    io.gotoxy(10,select + 1);
+    io.gotoxy(10, this->option + 1);
     cout << "->";
 }

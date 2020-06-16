@@ -5,52 +5,52 @@
 void GameEngine::ChangeState(GameState* state)
 {
 	// remove current running state (if available)
-	if ( !states.empty() ) { states.pop_back(); }
+	if ( !states.empty() ) { states.pop(); }
 
 	// push the new state in and run it
-	states.push_back(state);
-	states.back()->Init();
+	states.push(state);
+	states.top()->Init();
 }
 
 void GameEngine::PushState(GameState* state)
 {
 	// pause current state
 	if ( !states.empty() ) {
-		states.back()->Pause();
+		states.top()->Pause();
 	}
 
 	// store and init the new state
-	states.push_back(state);
-	states.back()->Init();
+	states.push(state);
+	states.top()->Init();
 }
 
 void GameEngine::PopState()
 {
 	// cleanup the current state
 	if ( !states.empty() ) {
-		states.pop_back();
+		states.pop();
 	}
 
 	// resume previous state
 	if ( !states.empty() ) {
-		states.back()->Resume();
+		states.top()->Resume();
 	}
 }
 
 void GameEngine::HandleEvents()
 {
 	// let the state handle events
-	states.back()->HandleEvents(this);
+	states.top()->HandleEvents(this);
 }
 
 void GameEngine::Update()
 {
 	// let the state update the game
-	states.back()->Update(this);
+	states.top()->Update(this);
 }
 
 void GameEngine::Draw()
 {
 	// let the state draw the screen
-	states.back()->Draw(this);
+	states.top()->Draw(this);
 }

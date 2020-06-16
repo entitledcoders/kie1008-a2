@@ -19,7 +19,7 @@ void ShowConsoleCursor(bool showFlag)
     SetConsoleCursorInfo(out, &cursorInfo);
 }
 
-void clearscreen()
+void clearScreen()
 {
 	ShowConsoleCursor(false);
 	gotoxy(0,0);

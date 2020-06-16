@@ -1,5 +1,5 @@
-#ifndef IOMANAGER_HPP
-#define IOMANAGER_HPP
+#ifndef IOMANAGER_H
+#define IOMANAGER_H
 
 #include <iostream>
 #include <windows.h>
@@ -23,7 +23,7 @@ enum eMenu
 };
 
 void gotoxy(int x,int y);
-void clearscreen();
+void clearScreen();
 int getInput();
 void ShowConsoleCursor(bool showFlag);
 

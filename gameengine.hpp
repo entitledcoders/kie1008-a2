@@ -1,7 +1,7 @@
 #ifndef GAMEENGINE_HPP
 #define GAMEENGINE_HPP
 
-#include <vector>
+#include <stack>
 
 using namespace std;
 
@@ -32,7 +32,7 @@ public:
 
 private:
 	// Stack of states
-	vector<GameState*> states;
+	stack<GameState*> states;
 
 	// Running state (true/false)
 	bool m_running;

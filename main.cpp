@@ -13,7 +13,7 @@ int main()
     game.Init();                                    // Sets run mode to true
     game.ChangeState( MenuState::Instance() );      // Enter introduction
 
-    clearscreen();
+    clearScreen();
 
     while( game.Running() )
     {
@@ -22,7 +22,7 @@ int main()
         game.Draw();
     }
 
-    clearscreen();
+    clearScreen();
 
     return 0;
 }

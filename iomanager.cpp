@@ -1,5 +1,6 @@
 #include "iomanager.hpp"
 
+// Sets cursor to x, y
 void gotoxy(int x,int y)
 {
     COORD pos;
@@ -8,6 +9,7 @@ void gotoxy(int x,int y)
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),pos);
 }
 
+// Enable cursor visibility
 void ShowConsoleCursor(bool showFlag)
 {
     HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -19,12 +21,14 @@ void ShowConsoleCursor(bool showFlag)
     SetConsoleCursorInfo(out, &cursorInfo);
 }
 
+// Clears screen
 void clearScreen()
 {
 	ShowConsoleCursor(false);
 	gotoxy(0,0);
 }
 
+// Get input
 int getInput()
 {
     int ch = _getch();

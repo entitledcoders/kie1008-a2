@@ -1,5 +1,5 @@
-#ifndef IOMANAGER_H
-#define IOMANAGER_H
+#ifndef IOMANAGER_HPP
+#define IOMANAGER_HPP
 
 #include <iostream>
 #include <windows.h>
@@ -7,6 +7,7 @@
 
 using namespace std;
 
+// All keys decoded from _getch
 enum eMenu
 {
     START = 0,
@@ -27,4 +28,4 @@ void clearScreen();
 int getInput();
 void ShowConsoleCursor(bool showFlag);
 
-#endif // IOMANAGER_H
+#endif  // IOMANAGER_HPP

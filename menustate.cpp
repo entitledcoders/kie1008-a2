@@ -12,12 +12,13 @@ void MenuState::Init()
 
 void MenuState::HandleEvents(GameEngine* game)
 {
+        // Handle events upon key press
         switch(getInput())
         {
-            case UP:    option--;
+            case UP:    option--;   // Moves cursor up
                         break;
 
-            case DOWN:  option++;
+            case DOWN:  option++;   // Moves cursor down
                         break;
 
             case ENTER: switch(this->option)
@@ -36,6 +37,7 @@ void MenuState::HandleEvents(GameEngine* game)
 
 void MenuState::Update(GameEngine* game)
 {
+    // Limits cursor movement to 3 selections.
     if(option<0) { option=0; }
     if(option>2) { option=2; }
 }

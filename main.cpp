@@ -8,13 +8,16 @@ using namespace std;
 
 int main()
 {
+    // Define game class
     GameEngine game;
 
+    // Initiate game class and get into main menu
     game.Init();                                    // Sets run mode to true
-    game.ChangeState( MenuState::Instance() );      // Enter introduction
+    game.ChangeState( MenuState::Instance() );      // Sets to menu state
 
-    clearScreen();
+    cout << "Press any key to start...";            // To be replaced with intro
 
+    // Starts game looping mechanism
     while( game.Running() )
     {
         game.HandleEvents();

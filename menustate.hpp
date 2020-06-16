@@ -23,4 +23,4 @@ private:
 	static MenuState m_MenuState;
 };
 
-#endif // MENUSTATE_HPP
+#endif  // MENUSTATE_HPP

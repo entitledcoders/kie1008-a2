@@ -20,7 +20,7 @@ void MenuState::Draw(GameEngine* game)
     cout << "              Exit               " << endl;
 
 
-    gotoxy(10, option + 5);
+    recursor(10, option + 5);
     cout << "->";
 }
 

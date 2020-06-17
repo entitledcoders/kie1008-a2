@@ -4,6 +4,10 @@
 #include <iostream>
 #include <windows.h>
 #include <conio.h>
+#include <cstdlib>
+#include <vector>
+#include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -27,5 +31,20 @@ void gotoxy(int x,int y);
 void recursor(int, int);
 int getInput();
 void ShowConsoleCursor(bool showFlag);
+
+//Load text from .txt file
+class File
+{
+public:
+    File(string filePath);
+    void print();
+
+private:
+    void load();
+    string path;
+    vector <string> fileData;
+};
+
+
 
 #endif  // IOMANAGER_HPP

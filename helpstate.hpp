@@ -2,6 +2,7 @@
 #define HELPSTATE_HPP
 
 #include "gamestate.hpp"
+#include "iomanager.hpp"
 
 class HelpState : public GameState
 {
@@ -20,6 +21,9 @@ public:
 	}
 
 private:
+    void loadHelp();
+
+    vector<File> helpPage;
 	int currentPage;
 	int page = 4;
 	static HelpState m_HelpState;

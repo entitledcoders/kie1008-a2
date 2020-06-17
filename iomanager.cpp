@@ -22,7 +22,7 @@ void ShowConsoleCursor(bool showFlag)
 }
 
 // Recursors
-void recursor(int x, int y)
+void recursor(int x,int y)
 {
 	ShowConsoleCursor(false);
 	gotoxy(x,y);
@@ -37,4 +37,36 @@ int getInput()
         ch = _getch();
 
     return ch;
+}
+
+File::File(string filePath)
+{
+    path = filePath;
+    load();
+}
+
+void File::load()
+{
+    ifstream file;
+
+    file.open(path);
+    if(file.fail()){ perror(path.c_str()); }
+
+    string line;
+
+    //Load each line
+    while(getline(file,line))
+    {
+        fileData.push_back(line);
+    }
+
+    file.close();
+}
+
+void File::print()
+{
+    for(int i = 0; i < fileData.size(); i++)
+    {
+        cout << fileData[i] << endl;
+    }
 }

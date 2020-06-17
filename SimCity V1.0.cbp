@@ -36,17 +36,21 @@
 		</Compiler>
 		<Unit filename="gameengine.cpp" />
 		<Unit filename="gameengine.hpp" />
-		<Unit filename="gamestate.cpp" />
 		<Unit filename="gamestate.hpp" />
 		<Unit filename="helpstate.cpp" />
 		<Unit filename="helpstate.hpp" />
 		<Unit filename="iomanager.cpp" />
 		<Unit filename="iomanager.hpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="mapmanager.cpp" />
+		<Unit filename="mapmanager.hpp" />
 		<Unit filename="menustate.cpp" />
 		<Unit filename="menustate.hpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
+			<code_completion />
+			<envvars />
+			<debugger />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

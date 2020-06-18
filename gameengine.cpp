@@ -1,5 +1,5 @@
 #include "gameengine.hpp"
-#include "menustate.hpp"
+#include "state/menustate.hpp"
 #include "manager/iomanager.hpp"
 
 void GameEngine::ChangeState(State* state)

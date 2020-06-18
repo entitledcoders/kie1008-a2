@@ -2,7 +2,7 @@
 #include "menustate.hpp"
 #include "iomanager.hpp"
 
-void GameEngine::ChangeState(GameState* state)
+void GameEngine::ChangeState(State* state)
 {
 	// remove current running state (if available)
 	if ( !states.empty() ) {
@@ -15,7 +15,7 @@ void GameEngine::ChangeState(GameState* state)
 	states.top()->Init();
 }
 
-void GameEngine::PushState(GameState* state)
+void GameEngine::PushState(State* state)
 {
 	// pause current state
 	if ( !states.empty() ) {

@@ -4,7 +4,7 @@
 #include "gameengine.hpp"
 #include "iomanager.hpp"
 
-class GameState
+class State
 {
 public:
 
@@ -17,12 +17,12 @@ public:
 	virtual void Update(GameEngine* game) = 0;
     // End
 
-	void ChangeState(GameEngine* game, GameState* state) {
+	void ChangeState(GameEngine* game, State* state) {
 		game->ChangeState(state);
 	}
 
 protected:
-	GameState() { }
+	State() { }
 };
 
 #endif // GAMESTATE_HPP

@@ -36,7 +36,6 @@
 		</Compiler>
 		<Unit filename="gameengine.cpp" />
 		<Unit filename="gameengine.hpp" />
-		<Unit filename="gamestate.hpp" />
 		<Unit filename="helpstate.cpp" />
 		<Unit filename="helpstate.hpp" />
 		<Unit filename="iomanager.cpp" />
@@ -46,6 +45,7 @@
 		<Unit filename="mapmanager.hpp" />
 		<Unit filename="menustate.cpp" />
 		<Unit filename="menustate.hpp" />
+		<Unit filename="states.hpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 			<code_completion />

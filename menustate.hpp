@@ -1,9 +1,9 @@
 #ifndef MENUSTATE_HPP
 #define MENUSTATE_HPP
 
-#include "gamestate.hpp"
+#include "states.hpp"
 
-class MenuState : public GameState
+class MenuState : public State
 {
 public:
     void Init();

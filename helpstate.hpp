@@ -1,10 +1,10 @@
 #ifndef HELPSTATE_HPP
 #define HELPSTATE_HPP
 
-#include "gamestate.hpp"
+#include "states.hpp"
 #include "iomanager.hpp"
 
-class HelpState : public GameState
+class HelpState : public State
 {
 public:
     void Init();

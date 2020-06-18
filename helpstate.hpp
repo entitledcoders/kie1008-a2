@@ -1,7 +1,7 @@
 #ifndef HELPSTATE_HPP
 #define HELPSTATE_HPP
 
-#include "states.hpp"
+#include "state.hpp"
 #include "iomanager.hpp"
 
 class HelpState : public State

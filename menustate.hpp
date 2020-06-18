@@ -1,7 +1,7 @@
 #ifndef MENUSTATE_HPP
 #define MENUSTATE_HPP
 
-#include "states.hpp"
+#include "state.hpp"
 
 class MenuState : public State
 {

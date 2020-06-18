@@ -2,7 +2,7 @@
 #define HELPSTATE_HPP
 
 #include "state.hpp"
-#include "iomanager.hpp"
+#include "../manager/iomanager.hpp"
 
 class HelpState : public State
 {

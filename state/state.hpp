@@ -1,8 +1,8 @@
 #ifndef GAMESTATE_HPP
 #define GAMESTATE_HPP
 
-#include "gameengine.hpp"
-#include "iomanager.hpp"
+#include "../gameengine.hpp"
+#include "../manager/iomanager.hpp"
 
 class State
 {

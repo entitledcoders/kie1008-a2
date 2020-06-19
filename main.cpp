@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-    system("COLOR FC");
+    consoleColor(WHITE, DARK_GRAY);
 
     // Define game class
     GameEngine game;

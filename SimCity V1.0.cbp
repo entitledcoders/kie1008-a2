@@ -14,6 +14,8 @@
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="./" />
+					<Add directory="C:/Users/TheLight/Desktop/kie1008-a2/manager" />
+					<Add directory="manager" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -24,6 +26,8 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add directory="./" />
+					<Add directory="C:/Users/TheLight/Desktop/kie1008-a2/manager" />
+					<Add directory="manager" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -41,6 +45,8 @@
 		<Unit filename="manager/iomanager.hpp" />
 		<Unit filename="manager/mapmanager.cpp" />
 		<Unit filename="manager/mapmanager.hpp" />
+		<Unit filename="manager/timemanager.cpp" />
+		<Unit filename="manager/timemanager.h" />
 		<Unit filename="state/helpstate.cpp" />
 		<Unit filename="state/helpstate.hpp" />
 		<Unit filename="state/menustate.cpp" />

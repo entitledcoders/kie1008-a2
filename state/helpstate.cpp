@@ -16,7 +16,9 @@ void HelpState::Draw(GameEngine* game)
     cout << "   ------------------------------" << endl;
     cout << "            Help (" << currentPage << "/" << page << ")" << endl;
     cout << "   ------------------------------" << endl;
+    textColor(RED);
     helpPage[currentPage - 1].print();
+    textColorRestore();
 }
 
 void HelpState::HandleEvents(GameEngine* game)

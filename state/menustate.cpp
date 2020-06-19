@@ -7,10 +7,12 @@ void MenuState::Init()
 {
     system("CLS");
     this->option = START;
+    timetest.start();
 }
 
 void MenuState::Draw(GameEngine* game)
 {
+
     recursor(0, 2);
     cout << "   ------------------------------" << endl;
     cout << "          EE City Builder        " << endl;
@@ -18,6 +20,8 @@ void MenuState::Draw(GameEngine* game)
     cout << "              Start              " << endl;
     cout << "              Help               " << endl;
     cout << "              Exit               " << endl;
+    cout << endl;
+    cout << "        Seconds passed: " << timetest.getRealSeconds() << endl;
 
 
     recursor(10, option + 5);

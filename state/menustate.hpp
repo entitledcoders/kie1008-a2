@@ -2,6 +2,14 @@
 #define MENUSTATE_HPP
 
 #include "state.hpp"
+#include "../manager/timemanager.h"
+
+enum eMenu
+{
+    START  = 0,
+    HELP   = 1,
+    EXIT   = 2,
+};
 
 class MenuState : public State
 {
@@ -20,6 +28,7 @@ public:
 	}
 
 private:
+    timemanager timetest;
 	int option;
 	static MenuState m_MenuState;
 };

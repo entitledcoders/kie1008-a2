@@ -1,43 +1,8 @@
 #include "iomanager.hpp"
 
-// Sets cursor to x, y
-void gotoxy(int x,int y)
-{
-    COORD pos;
-    pos.X = x;
-    pos.Y = y;
-    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),pos);
-}
 
-// Enable cursor visibility
-void ShowConsoleCursor(bool showFlag)
-{
-    HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
 
-    CONSOLE_CURSOR_INFO     cursorInfo;
-
-    GetConsoleCursorInfo(out, &cursorInfo);
-    cursorInfo.bVisible = showFlag; // set the cursor visibility
-    SetConsoleCursorInfo(out, &cursorInfo);
-}
-
-// Recursors
-void recursor(int x,int y)
-{
-	ShowConsoleCursor(false);
-	gotoxy(x,y);
-}
-
-// Get input
-int getInput()
-{
-    int ch = _getch();
-
-    if (ch == 0 || ch == 224)
-        ch = _getch();
-
-    return ch;
-}
+//--------------------- INPUT FILE --------------------
 
 File::File(string filePath)
 {
@@ -69,4 +34,147 @@ void File::print()
     {
         cout << fileData[i] << endl;
     }
+}
+
+//------------------ INPUT KEYBOARD --------------------
+
+int getInput()
+{
+    if(_kbhit())
+    {
+        int ch = _getch();
+
+        if (ch == 0 || ch == 224)
+            ch = _getch();
+
+        return ch;
+    }
+
+}
+
+//------------------ OUTPUT CURSOR ---------------------
+
+HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+// Sets cursor to x, y
+void gotoxy(int x,int y)
+{
+    COORD pos;
+    pos.X = x;
+    pos.Y = y;
+    SetConsoleCursorPosition(hConsole,pos);
+}
+
+// Enable cursor visibility
+void showConsoleCursor(bool showFlag)
+{
+    CONSOLE_CURSOR_INFO cursorInfo;
+
+    GetConsoleCursorInfo(hConsole, &cursorInfo);
+    cursorInfo.bVisible = showFlag; // set the cursor visibility
+    SetConsoleCursorInfo(hConsole, &cursorInfo);
+}
+
+// Recursors
+void recursor(int x,int y)
+{
+	showConsoleCursor(false);
+	gotoxy(x,y);
+}
+
+//------------------ OUTPUT COLOUR ---------------------
+
+int defaultFG = WHITE;
+int defaultBG = BLACK;
+
+void consoleColor(int foreground, int backround)
+{
+    defaultFG = foreground;
+    defaultBG = backround;
+
+    string colorCMD = "color ";
+    if(backround > 9)
+    {
+        switch(backround)
+        {
+        case 10:
+            colorCMD.append("A");
+            break;
+
+        case 11:
+            colorCMD.append("B");
+            break;
+
+        case 12:
+            colorCMD.append("C");
+            break;
+
+        case 13:
+            colorCMD.append("D");
+            break;
+
+        case 14:
+            colorCMD.append("E");
+            break;
+
+        case 15:
+            colorCMD.append("F");
+            break;
+        }
+    }
+    else
+    {
+        colorCMD.append(to_string(backround));
+    }
+
+    if(foreground > 9)
+    {
+        switch(foreground)
+        {
+        case 10:
+            colorCMD.append("A");
+            break;
+
+        case 11:
+            colorCMD.append("B");
+            break;
+
+        case 12:
+            colorCMD.append("C");
+            break;
+
+        case 13:
+            colorCMD.append("D");
+            break;
+
+        case 14:
+            colorCMD.append("E");
+            break;
+
+        case 15:
+            colorCMD.append("F");
+            break;
+        }
+    }
+    else
+    {
+        colorCMD.append(to_string(foreground));
+    }
+
+    system(colorCMD.c_str());
+}
+
+void textColor(int foreground)
+{
+    SetConsoleTextAttribute(hConsole, foreground);
+}
+
+void textColor(int foreground, int backround)
+{
+    int colourCombo = foreground + (backround*16);
+    SetConsoleTextAttribute(hConsole, colourCombo);
+}
+
+void textColorRestore()
+{
+    textColor(defaultFG,defaultBG);
 }

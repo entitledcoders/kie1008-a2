@@ -23,9 +23,8 @@ void MenuState::Draw(GameEngine* game)
     cout << endl;
     cout << "        Seconds passed: " << timetest.getRealSeconds() << endl;
 
-
     recursor(10, option + 5);
-    cout << "->";
+    cout << " ->";
 }
 
 void MenuState::HandleEvents(GameEngine* game)
@@ -51,6 +50,8 @@ void MenuState::HandleEvents(GameEngine* game)
                     }
                     break;
     }
+
+
 }
 
 void MenuState::Update(GameEngine* game)

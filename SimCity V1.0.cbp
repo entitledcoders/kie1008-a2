@@ -46,7 +46,7 @@
 		<Unit filename="manager/mapmanager.cpp" />
 		<Unit filename="manager/mapmanager.hpp" />
 		<Unit filename="manager/timemanager.cpp" />
-		<Unit filename="manager/timemanager.h" />
+		<Unit filename="manager/timemanager.hpp" />
 		<Unit filename="state/helpstate.cpp" />
 		<Unit filename="state/helpstate.hpp" />
 		<Unit filename="state/menustate.cpp" />

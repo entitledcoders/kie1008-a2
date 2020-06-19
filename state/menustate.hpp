@@ -2,7 +2,7 @@
 #define MENUSTATE_HPP
 
 #include "state.hpp"
-#include "../manager/timemanager.h"
+#include "../manager/timemanager.hpp"
 
 enum eMenu
 {

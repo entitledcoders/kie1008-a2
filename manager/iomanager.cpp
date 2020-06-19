@@ -40,12 +40,12 @@ void File::print()
 
 int getInput()
 {
-    if(_kbhit())
+    if(kbhit())
     {
-        int ch = _getch();
+        int ch = getch();
 
         if (ch == 0 || ch == 224)
-            ch = _getch();
+        ch = getch();
 
         return ch;
     }
@@ -165,7 +165,7 @@ void consoleColor(int foreground, int backround)
 
 void textColor(int foreground)
 {
-    SetConsoleTextAttribute(hConsole, foreground);
+    SetConsoleTextAttribute(hConsole, foreground + (defaultBG*16));
 }
 
 void textColor(int foreground, int backround)

@@ -1,4 +1,4 @@
-#include "timemanager.h"
+#include "timemanager.hpp"
 
 timemanager::timemanager()
 {
@@ -35,7 +35,6 @@ void timemanager::resume()
 void timemanager::stop()
 {
     run = false;
-
 }
 
 void timemanager::reset()

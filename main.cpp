@@ -1,13 +1,14 @@
+#include <iostream>
 #include <stdlib.h>
-#include "manager/iomanager.hpp"
+#include "iomanager.hpp"
 #include "gameengine.hpp"
-#include "state/menustate.hpp"
+#include "menustate.hpp"
 
 using namespace std;
 
 int main()
 {
-    consoleColor(WHITE, DARK_GRAY);
+    system("COLOR FC");
 
     // Define game class
     GameEngine game;

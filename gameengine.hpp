@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class State;    // Forward declaration to avoid errors
+class GameState;    // Forward declaration to avoid errors
 
 class GameEngine
 {
@@ -14,10 +14,10 @@ public:
 	void Init() { m_running = true; };
 
     // Pops old state and pushes new state in (switch)
-	void ChangeState(State* state);
+	void ChangeState(GameState* state);
 
 	// Push and pop without removing previous state (for in-game menus)
-	void PushState(State* state);
+	void PushState(GameState* state);
 	void PopState();
 
     // Looping the three main processes
@@ -32,7 +32,7 @@ public:
 
 private:
 	// Stack of states
-	stack<State*> states;
+	stack<GameState*> states;
 
 	// Running state (true/false)
 	bool m_running;

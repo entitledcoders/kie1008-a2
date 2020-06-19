@@ -1,8 +1,8 @@
 #include "gameengine.hpp"
-#include "state/menustate.hpp"
-#include "manager/iomanager.hpp"
+#include "menustate.hpp"
+#include "iomanager.hpp"
 
-void GameEngine::ChangeState(State* state)
+void GameEngine::ChangeState(GameState* state)
 {
 	// remove current running state (if available)
 	if ( !states.empty() ) {
@@ -15,7 +15,7 @@ void GameEngine::ChangeState(State* state)
 	states.top()->Init();
 }
 
-void GameEngine::PushState(State* state)
+void GameEngine::PushState(GameState* state)
 {
 	// pause current state
 	if ( !states.empty() ) {

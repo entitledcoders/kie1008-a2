@@ -1,10 +1,10 @@
 #ifndef GAMESTATE_HPP
 #define GAMESTATE_HPP
 
-#include "../gameengine.hpp"
-#include "../manager/iomanager.hpp"
+#include "gameengine.hpp"
+#include "iomanager.hpp"
 
-class State
+class GameState
 {
 public:
 
@@ -17,12 +17,12 @@ public:
 	virtual void Update(GameEngine* game) = 0;
     // End
 
-	void ChangeState(GameEngine* game, State* state) {
+	void ChangeState(GameEngine* game, GameState* state) {
 		game->ChangeState(state);
 	}
 
 protected:
-	State() { }
+	GameState() { }
 };
 
 #endif // GAMESTATE_HPP

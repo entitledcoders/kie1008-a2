@@ -1,17 +1,9 @@
 #ifndef MENUSTATE_HPP
 #define MENUSTATE_HPP
 
-#include "state.hpp"
-#include "../manager/timemanager.h"
+#include "gamestate.hpp"
 
-enum eMenu
-{
-    START  = 0,
-    HELP   = 1,
-    EXIT   = 2,
-};
-
-class MenuState : public State
+class MenuState : public GameState
 {
 public:
     void Init();
@@ -28,7 +20,6 @@ public:
 	}
 
 private:
-    timemanager timetest;
 	int option;
 	static MenuState m_MenuState;
 };

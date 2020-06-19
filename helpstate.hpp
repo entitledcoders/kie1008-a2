@@ -1,9 +1,9 @@
 #ifndef HELPSTATE_HPP
 #define HELPSTATE_HPP
 
-#include "state.hpp"
+#include "gamestate.hpp"
 
-class HelpState : public State
+class HelpState : public GameState
 {
 public:
     void Init();
@@ -20,9 +20,6 @@ public:
 	}
 
 private:
-    void loadHelp();
-
-    vector<File> helpPage;
 	int currentPage;
 	int page = 4;
 	static HelpState m_HelpState;

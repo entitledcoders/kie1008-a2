@@ -14,8 +14,6 @@
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="./" />
-					<Add directory="C:/Users/TheLight/Desktop/kie1008-a2/manager" />
-					<Add directory="manager" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -26,8 +24,6 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add directory="./" />
-					<Add directory="C:/Users/TheLight/Desktop/kie1008-a2/manager" />
-					<Add directory="manager" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -40,23 +36,17 @@
 		</Compiler>
 		<Unit filename="gameengine.cpp" />
 		<Unit filename="gameengine.hpp" />
+		<Unit filename="gamestate.cpp" />
+		<Unit filename="gamestate.hpp" />
+		<Unit filename="helpstate.cpp" />
+		<Unit filename="helpstate.hpp" />
+		<Unit filename="iomanager.cpp" />
+		<Unit filename="iomanager.hpp" />
 		<Unit filename="main.cpp" />
-		<Unit filename="manager/iomanager.cpp" />
-		<Unit filename="manager/iomanager.hpp" />
-		<Unit filename="manager/mapmanager.cpp" />
-		<Unit filename="manager/mapmanager.hpp" />
-		<Unit filename="manager/timemanager.cpp" />
-		<Unit filename="manager/timemanager.h" />
-		<Unit filename="state/helpstate.cpp" />
-		<Unit filename="state/helpstate.hpp" />
-		<Unit filename="state/menustate.cpp" />
-		<Unit filename="state/menustate.hpp" />
-		<Unit filename="state/state.hpp" />
+		<Unit filename="menustate.cpp" />
+		<Unit filename="menustate.hpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
-			<code_completion />
-			<envvars />
-			<debugger />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

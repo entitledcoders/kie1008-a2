@@ -7,7 +7,7 @@ using namespace std;
 
 class State;    // Forward declaration to avoid errors
 
-class GameEngine
+class StateManager
 {
 public:
     // Start of program, sets running to true

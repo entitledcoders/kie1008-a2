@@ -12,6 +12,7 @@ public:
     void resume();
     void stop();
     void reset();
+    bool isRun();
     signed int getRealSeconds();
     signed int getGameDay();
 

@@ -10,7 +10,7 @@ void HelpState::Init()
     loadHelp();
 }
 
-void HelpState::Draw(GameEngine* game)
+void HelpState::Draw(StateManager* game)
 {
     recursor(0, 2);
     cout << "   ------------------------------" << endl;
@@ -21,7 +21,7 @@ void HelpState::Draw(GameEngine* game)
     textColorRestore();
 }
 
-void HelpState::HandleEvents(GameEngine* game)
+void HelpState::HandleEvents(StateManager* game)
 {
     // Change pages on key input
     switch(getInput())
@@ -35,7 +35,7 @@ void HelpState::HandleEvents(GameEngine* game)
     }
 }
 
-void HelpState::Update(GameEngine* game)
+void HelpState::Update(StateManager* game)
 {
     // Limits currentPage to available pages.
     if(currentPage < 1) { currentPage=1; }

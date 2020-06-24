@@ -1,5 +1,5 @@
-#ifndef GAMEENGINE_HPP
-#define GAMEENGINE_HPP
+#ifndef STATEMANAGER_HPP
+#define STATEMANAGER_HPP
 
 #include <stack>
 
@@ -7,7 +7,7 @@ using namespace std;
 
 class State;    // Forward declaration to avoid errors
 
-class GameEngine
+class StateManager
 {
 public:
     // Start of program, sets running to true
@@ -38,4 +38,4 @@ private:
 	bool m_running;
 };
 
-#endif // GAMEENGINE_HPP
+#endif // STATEMANAGER_HPP

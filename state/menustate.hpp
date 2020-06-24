@@ -19,9 +19,9 @@ public:
     void Pause() {};
     void Resume() {};
 
-    void Draw(GameEngine* game);
-	void HandleEvents(GameEngine* game);
-	void Update(GameEngine* game);
+    void Draw(StateManager* game);
+	void HandleEvents(StateManager* game);
+	void Update(StateManager* game);
 
     static MenuState* Instance() {
 		return &m_MenuState;

@@ -61,3 +61,8 @@ signed int timemanager::getGameDay()
 {
     return getRealSeconds()/gameDayPerSec;
 }
+
+bool timemanager::isRun()
+{
+    return run;
+}

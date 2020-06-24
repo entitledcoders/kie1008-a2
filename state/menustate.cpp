@@ -10,8 +10,9 @@ void MenuState::Init()
     timetest.start();
 }
 
-void MenuState::Draw(StateManager* game)
+void MenuState::Draw(GameEngine* game)
 {
+
     recursor(0, 2);
     cout << "   ------------------------------" << endl;
     cout << "          EE City Builder        " << endl;
@@ -26,7 +27,7 @@ void MenuState::Draw(StateManager* game)
     cout << " ->";
 }
 
-void MenuState::HandleEvents(StateManager* game)
+void MenuState::HandleEvents(GameEngine* game)
 {
     // Handle events upon key press
     switch(getInput())
@@ -47,20 +48,15 @@ void MenuState::HandleEvents(StateManager* game)
 
                     case EXIT:  game->Quit();
                     }
-                    timetest.pause();
                     break;
     }
 
+
 }
 
-void MenuState::Update(StateManager* game)
+void MenuState::Update(GameEngine* game)
 {
     // Limits cursor movement to 3 selections.
     if(option<0) { option=0; }
     if(option>2) { option=2; }
-
-    if(!timetest.isRun())
-    {
-        timetest.resume();
-    }
 }

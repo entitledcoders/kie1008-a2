@@ -1,8 +1,8 @@
-#include "statemanager.hpp"
-#include "../state/menustate.hpp"
-#include "iomanager.hpp"
+#include "gameengine.hpp"
+#include "state/menustate.hpp"
+#include "manager/iomanager.hpp"
 
-void StateManager::ChangeState(State* state)
+void GameEngine::ChangeState(State* state)
 {
 	// remove current running state (if available)
 	if ( !states.empty() ) {
@@ -15,7 +15,7 @@ void StateManager::ChangeState(State* state)
 	states.top()->Init();
 }
 
-void StateManager::PushState(State* state)
+void GameEngine::PushState(State* state)
 {
 	// pause current state
 	if ( !states.empty() ) {
@@ -27,7 +27,7 @@ void StateManager::PushState(State* state)
 	states.top()->Init();
 }
 
-void StateManager::PopState()
+void GameEngine::PopState()
 {
 	// cleanup the current state
 	if ( !states.empty() ) {
@@ -41,19 +41,19 @@ void StateManager::PopState()
 	}
 }
 
-void StateManager::Draw()
+void GameEngine::Draw()
 {
 	// let the state draw the screen
 	states.top()->Draw(this);
 }
 
-void StateManager::HandleEvents()
+void GameEngine::HandleEvents()
 {
 	// let the state handle events
 	states.top()->HandleEvents(this);
 }
 
-void StateManager::Update()
+void GameEngine::Update()
 {
 	// let the state update the game
 	states.top()->Update(this);

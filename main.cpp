@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include "manager/iomanager.hpp"
-#include "manager/statemanager.hpp"
+#include "gameengine.hpp"
 #include "state/menustate.hpp"
 
 using namespace std;
@@ -10,7 +10,7 @@ int main()
     consoleColor(WHITE, DARK_GRAY);
 
     // Define game class
-    StateManager game;
+    GameEngine game;
 
     // Initiate game class and get into main menu
     game.Init();                                    // Sets run mode to true

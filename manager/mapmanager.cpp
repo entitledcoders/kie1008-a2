@@ -1,31 +1,31 @@
 #include "mapmanager.hpp"
 
-MapManager::MapManager(string path)
-{
-    filepath = path;
-    this->isExist();
-}
-
 void MapManager::isExist()
 {
     ifstream mapfile;
     mapfile.open(filepath);
     if(mapfile.fail()){
         cerr << "(E0) " << filepath << " does not exist, creating new map" << endl;
-        this->New();
+        this->New(filepath, ROW, COL, 0);
     }
 }
 
-void MapManager::New()
+void MapManager::New(string path, int r, int c, bool load)
 {
+    ROW = r;
+    COL = c;
+    filepath = path;
+    if(!load)
+    {
     ofstream mapfile;
     system("mkdir map");
     mapfile.open(filepath);
     for(int row = 0; row < ROW; row++)
-    {
-        for(int col = 0; col < COL*BIT; col++)
-        {mapfile << "0";}
-    mapfile << endl;
+        {
+            for(int col = 0; col < COL; col++)
+            {mapfile << " ";}
+        mapfile << endl;
+        }
     }
 }
 
@@ -38,15 +38,19 @@ void MapManager::Load()
     for(int row = 0; row < ROW; row++)
     {
         getline(mapfile, temp);
-        //cout << temp;                             Probing point (test for line copy)
+        //cout << temp;                             //Probing point (test for line copy)
         for(int col = 0; col < COL; col++)
         {
-            this->unit[row][col] = temp.substr(col*BIT, BIT);
+            unit[row][col] = temp[col];
         }
     }
+    getline(mapfile, temp);
+    stringstream(temp) >> time;
+    getline(mapfile, temp);
+    stringstream(temp) >> balance;
 }
 
-void MapManager::Update()
+void MapManager::Update(unsigned int elapsed, int money)
 {
     ofstream mapfile;
     mapfile.open(filepath, ios::out | ios::trunc);
@@ -58,15 +62,40 @@ void MapManager::Update()
         { mapfile << unit[row][col]; }
         mapfile << endl;
     }
+    mapfile << elapsed << endl;
+    mapfile << money;
 }
 
-void MapManager::Draw()
+void MapManager::Draw(int x, int y)
 {
     for(int row = 0; row < ROW; row++)
     {
         for(int col = 0; col < COL; col++)
         {
-            cout << "[" << unit[row][col] << "]";
+            bool cursor;
+            ((row==x)&&(col==y))? cursor = true : cursor = false ;
+
+            {
+            switch (unit[row][col])
+                {
+                    case 'a':   textColor(DARK_GRAY, LIGHT_GREEN);
+                                cursor? cout << "> <": cout << "   ";
+                                textColorRestore();
+                                break;
+                    case 'd':   textColor(DARK_GRAY, LIGHT_BLUE);
+                                cursor? cout << "> <": cout << "   ";
+                                textColorRestore();
+                                break;
+                    case 'g':   textColor(DARK_GRAY, LIGHT_RED);
+                                cursor? cout << "> <": cout << "   ";
+                                textColorRestore();
+                                break;
+                    default:    cursor? cout << "> <": cout << "[ ]";
+                }
+            }
+            // Cursor
+
+
         }
         cout << endl;
     }

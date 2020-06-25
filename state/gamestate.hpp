@@ -2,8 +2,9 @@
 #define GAMESTATE_HPP
 
 #include "state.hpp"
-#include "../engine/map.hpp"
 #include "../manager/timemanager.hpp"
+#include "../manager/mapmanager.hpp"
+#include "../engine/economy.hpp"
 
 class GameState : public State
 {
@@ -19,15 +20,23 @@ public:
 
     static GameState* Instance() {
 		return &m_GameState;
+
 	}
 
 private:
-    int ROW, COL;
-    int rowSize, colSize;
+    Time gameTime;
+    MapManager map1;
+    Economy plyMoney;
+
+    void income();
+
+    bool OptionState;
     bool run = false;
 
-    Map gameMap;
-    Time gameTime;
+    int row, col, c;
+    int rowSize, colSize;
+    int prevDay;
+
 	static GameState m_GameState;
 };
 

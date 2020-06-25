@@ -42,6 +42,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="economy.cpp" />
+		<Unit filename="engine/economy.cpp" />
+		<Unit filename="engine/economy.hpp" />
 		<Unit filename="engine/map.cpp" />
 		<Unit filename="engine/map.hpp" />
 		<Unit filename="engine/tile.cpp" />
@@ -64,9 +67,6 @@
 		<Unit filename="state/state.hpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
-			<code_completion />
-			<envvars />
-			<debugger />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

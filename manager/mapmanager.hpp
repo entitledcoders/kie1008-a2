@@ -1,6 +1,9 @@
 #ifndef MAPMANAGER_HPP
 #define MAPMANAGER_HPP
 
+#include "iomanager.hpp"
+
+#include <sstream>
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -9,20 +12,23 @@
 
 using namespace std;
 
-enum { ROW = 24, COL = 20, BIT = 2};
-
 class MapManager
 {
     public:
-        MapManager(string);
+        MapManager() {};
 
         void isExist();
-        void New();
-        void Update();
+        void New(string, int, int, bool);
+        void Update(unsigned int, int);
         void Load();
-        void Draw();
+        void Draw(int, int);
 
-        string unit[ROW][COL];
+        char unit[24][20];
+        int ROW, COL;
+
+        unsigned int time;
+        int balance;
+
     private:
         string filepath;
 };

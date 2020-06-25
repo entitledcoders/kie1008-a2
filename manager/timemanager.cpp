@@ -6,9 +6,10 @@ Time::timemanager()
     run = false;
 }
 
-void Time::start()
+void Time::start(unsigned int elapsed)
 {
     reset();
+    tempSeconds = elapsed;
     startSec = time(0);
     run = true;
 }
@@ -58,7 +59,7 @@ signed int Time::getRealSeconds()
 
 signed int Time::getGameDay()
 {
-    return getRealSeconds()/3;
+    return getRealSeconds()/dayPerSec;
 }
 
 bool Time::isRun()

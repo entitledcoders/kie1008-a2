@@ -7,7 +7,7 @@ class Time
 {
 public:
     timemanager();
-    void start();
+    void start(unsigned int);
     void pause();
     void resume();
     void stop();
@@ -15,6 +15,8 @@ public:
     bool isRun();
     signed int getRealSeconds();
     signed int getGameDay();
+
+    int dayPerSec = 5;
 
 private:
     bool run;

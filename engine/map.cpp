@@ -55,7 +55,7 @@ void Map::emptyTile(int row,int col)
 
 int Map::tileNum(int row,int col)
 {
-    return row + (col*10);
+    return col + (row*ROW);
 }
 
 

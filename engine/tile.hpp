@@ -16,6 +16,7 @@ public:
     bool isEmpty();
 
 private:
+    string current;
     bool occupied;
     char bracket[2];
     char tile;

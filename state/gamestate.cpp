@@ -5,8 +5,8 @@ GameState GameState::m_GameState;
 
 void GameState::Init()
 {
-    rowSize = 10;
-    colSize = 10;
+    rowSize = 20;
+    colSize = 20;
     gameMap.setSize(rowSize,colSize);
 
     if(!run)

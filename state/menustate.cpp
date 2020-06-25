@@ -8,7 +8,6 @@ void MenuState::Init()
 {
     system("CLS");
     this->option = START;
-    timetest.start();
 }
 
 void MenuState::Draw(StateManager* game)
@@ -21,8 +20,6 @@ void MenuState::Draw(StateManager* game)
     cout << "              Help               " << endl;
     cout << "              Exit               " << endl;
     cout << endl;
-    cout << "        Seconds passed: " << timetest.getRealSeconds() << endl;
-
     recursor(10, option + 5);
     cout << " ->";
 }
@@ -48,7 +45,6 @@ void MenuState::HandleEvents(StateManager* game)
 
                     case EXIT:  game->Quit();
                     }
-                    timetest.pause();
                     break;
     }
 
@@ -59,9 +55,4 @@ void MenuState::Update(StateManager* game)
     // Limits cursor movement to 3 selections.
     if(option<0) { option=0; }
     if(option>2) { option=2; }
-
-    if(!timetest.isRun())
-    {
-        timetest.resume();
-    }
 }

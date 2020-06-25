@@ -3,6 +3,7 @@
 
 #include "state.hpp"
 #include "../engine/map.hpp"
+#include "../manager/timemanager.hpp"
 
 class GameState : public State
 {
@@ -26,6 +27,7 @@ private:
     bool run = false;
 
     Map gameMap;
+    Time gameTime;
 	static GameState m_GameState;
 };
 

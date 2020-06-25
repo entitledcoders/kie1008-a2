@@ -3,7 +3,7 @@
 
 #include <ctime>
 
-class timemanager
+class Time
 {
 public:
     timemanager();
@@ -18,7 +18,6 @@ public:
 
 private:
     bool run;
-    int gameDayPerSec;
     time_t startSec;
     signed int realSeconds;
     signed int tempSeconds;

@@ -13,6 +13,9 @@ void GameState::Init()
     {
         ROW = 0;
         COL = 0;
+
+        gameTime.start();
+
         run = true;
     }
 
@@ -23,6 +26,8 @@ void GameState::Draw(StateManager* game)
 {
     recursor(0, 0);
     gameMap.show();
+    recursor(colSize*3+2,0);
+    cout << "Day: " << gameTime.getGameDay() << endl;
 }
 
 void GameState::HandleEvents(StateManager* game)
@@ -43,6 +48,7 @@ void GameState::HandleEvents(StateManager* game)
                     gameMap.emptyTile(ROW-1,COL);
                         break;
         case ESC:   game->PopState();
+                    gameTime.pause();
                         break;
     }
 }
@@ -54,6 +60,11 @@ void GameState::Update(StateManager* game)
     if(COL < 0) { COL = 0; }
     if(COL > colSize-1) { COL = colSize-1; }
     gameMap.cursorTile(ROW,COL);
+
+    if(!gameTime.isRun())
+    {
+        gameTime.resume();
+    }
 }
 
 

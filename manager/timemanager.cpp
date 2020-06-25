@@ -1,20 +1,19 @@
 #include "timemanager.hpp"
 
-timemanager::timemanager()
+Time::timemanager()
 {
     reset();
-    gameDayPerSec = 5;
     run = false;
 }
 
-void timemanager::start()
+void Time::start()
 {
     reset();
     startSec = time(0);
     run = true;
 }
 
-void timemanager::pause()
+void Time::pause()
 {
     if(run)
     {
@@ -23,7 +22,7 @@ void timemanager::pause()
     }
 }
 
-void timemanager::resume()
+void Time::resume()
 {
     if(!run)
     {
@@ -32,19 +31,19 @@ void timemanager::resume()
     }
 }
 
-void timemanager::stop()
+void Time::stop()
 {
     run = false;
 }
 
-void timemanager::reset()
+void Time::reset()
 {
     startSec = 0;
     realSeconds = 0;
     tempSeconds = 0;
 }
 
-signed int timemanager::getRealSeconds()
+signed int Time::getRealSeconds()
 {
     if(!run)
     {
@@ -57,12 +56,12 @@ signed int timemanager::getRealSeconds()
     }
 }
 
-signed int timemanager::getGameDay()
+signed int Time::getGameDay()
 {
-    return getRealSeconds()/gameDayPerSec;
+    return getRealSeconds()/3;
 }
 
-bool timemanager::isRun()
+bool Time::isRun()
 {
     return run;
 }

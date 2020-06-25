@@ -28,7 +28,6 @@ public:
 	}
 
 private:
-    timemanager timetest;
 	int option;
 	static MenuState m_MenuState;
 };

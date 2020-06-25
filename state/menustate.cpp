@@ -1,5 +1,6 @@
 #include "menustate.hpp"
 #include "helpstate.hpp"
+#include "gamestate.hpp"
 
 MenuState MenuState::m_MenuState;
 
@@ -39,7 +40,7 @@ void MenuState::HandleEvents(StateManager* game)
 
         case ENTER: switch(this->option)
                     {
-                    case START: //game.ChangeState();
+                    case START: game->PushState( GameState::Instance() );
                                 break;
 
                     case HELP:  game->PushState( HelpState::Instance() );

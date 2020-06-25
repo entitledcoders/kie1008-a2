@@ -20,6 +20,8 @@ public:
 	}
 
 private:
+    int currentPage;
+	int page = 4;
 	static GameState m_GameState;
 };
 

@@ -1,5 +1,5 @@
 #include "tile.hpp"
-#include "../manager/iomanager.hpp"
+
 
 Tile::Tile()
 {

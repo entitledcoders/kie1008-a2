@@ -2,6 +2,7 @@
 #define GAMESTATE_HPP
 
 #include "state.hpp"
+#include "../engine/map.hpp"
 
 class GameState : public State
 {
@@ -20,8 +21,7 @@ public:
 	}
 
 private:
-    int currentPage;
-	int page = 4;
+    Map gameMap;
 	static GameState m_GameState;
 };
 

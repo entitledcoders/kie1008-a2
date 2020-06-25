@@ -3,8 +3,13 @@
 
 Map::Map()
 {
-    ROW = 10;
-    COL = 10;
+    reset();
+}
+
+void Map::setSize(int row,int col)
+{
+    ROW = row;
+    COL = col;
     reset();
 }
 
@@ -26,9 +31,35 @@ void Map::show()
     {
         for(int j = 0; j < COL; j++)
         {
-            int currentTile = i + (j*10);
-            tiles[currentTile].print();
+            tiles[tileNum(i,j)].print();
         }
         cout << endl;
     }
+}
+
+void Map::cursorTile(int row,int col)
+{
+    if(boundaryCheck(row,col))
+    {
+        tiles[tileNum(row,col)].cursorTile();
+    }
+}
+
+void Map::emptyTile(int row,int col)
+{
+    if(boundaryCheck(row,col))
+    {
+        tiles[tileNum(row,col)].emptyTile();
+    }
+}
+
+int Map::tileNum(int row,int col)
+{
+    return row + (col*10);
+}
+
+
+bool Map::boundaryCheck(int row, int col)
+{
+    return (row >= 0 && col >= 0 && row < ROW && col < COL);
 }

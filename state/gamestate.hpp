@@ -21,6 +21,10 @@ public:
 	}
 
 private:
+    int ROW, COL;
+    int rowSize, colSize;
+    bool run = false;
+
     Map gameMap;
 	static GameState m_GameState;
 };

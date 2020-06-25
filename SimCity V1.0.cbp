@@ -17,6 +17,7 @@
 					<Add directory="C:/Users/TheLight/Desktop/kie1008-a2/manager" />
 					<Add directory="manager" />
 					<Add directory="state" />
+					<Add directory="engine" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -30,6 +31,7 @@
 					<Add directory="C:/Users/TheLight/Desktop/kie1008-a2/manager" />
 					<Add directory="manager" />
 					<Add directory="state" />
+					<Add directory="engine" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -40,6 +42,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="engine/map.cpp" />
+		<Unit filename="engine/map.hpp" />
+		<Unit filename="engine/tile.cpp" />
+		<Unit filename="engine/tile.hpp" />
 		<Unit filename="main.cpp" />
 		<Unit filename="manager/iomanager.cpp" />
 		<Unit filename="manager/iomanager.hpp" />

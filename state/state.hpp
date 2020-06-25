@@ -1,5 +1,5 @@
-#ifndef GAMESTATE_HPP
-#define GAMESTATE_HPP
+#ifndef STATE_HPP
+#define STATE_HPP
 
 #include "../manager/statemanager.hpp"
 #include "../manager/iomanager.hpp"
@@ -25,4 +25,4 @@ protected:
 	State() { }
 };
 
-#endif // GAMESTATE_HPP
+#endif // STATE_HPP

@@ -172,9 +172,8 @@ void GameState::Update(StateManager* game)
     if(c > 3) {c = 3;}
 
     if(!gameTime.isRun())
-    {
-        gameTime.resume();
-    }
+        if(!PauseFlag)
+            gameTime.resume();
 }
 
 void GameState::notify(string temp, int time)
@@ -201,6 +200,7 @@ void GameState::OptionState()
             case DOWN:  c++;
                         break;
             case ESC:   OptionFlag = false;
+                        gameTime.pause();
                         clearMenu(5, 13);
                         break;
             case ENTER: if(map1.unit[row][col]==' ')

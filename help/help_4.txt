@@ -1,15 +1,5 @@
-#################################################
-#                                               #
-#     #######   #######   #######   #######     #
-#        #      #         #            #        #
-#        #      #         #            #        #
-#        #      #         #            #        #
-#        #      #######   #######      #        #
-#        #      #               #      #        #
-#        #      #               #      #        #
-#        #      #               #      #        #
-#        #      #######   #######      #        #
-#                                               #
-#################################################
 
-PAGE 4
+                  Time
+	
+    - Game speed can be controlled by accessing Pause Menu
+    - Faster the speed, the faster the money gained from respective area.

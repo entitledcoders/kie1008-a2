@@ -13,10 +13,10 @@ void HelpState::Init()
 void HelpState::Draw(StateManager* game)
 {
     recursor(0, 2);
-    cout << "   ------------------------------" << endl;
-    cout << "            Help (" << currentPage << "/" << page << ")" << endl;
-    cout << "   ------------------------------" << endl;
-    textColor(RED);
+    cout << "      ------------------------------" << endl;
+    cout << "                Help (" << currentPage << "/" << page << ")" << endl;
+    cout << "      ------------------------------" << endl;
+    textColor(WHITE);
     helpPage[currentPage - 1].print();
     textColorRestore();
 }
@@ -27,8 +27,10 @@ void HelpState::HandleEvents(StateManager* game)
     switch(getInput())
     {
         case RIGHT: currentPage++;
+                    system("CLS");
                         break;
         case LEFT:  currentPage--;
+                    system("CLS");
                         break;
         case ESC:   game->PopState();
                         break;

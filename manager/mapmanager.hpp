@@ -23,9 +23,15 @@ class MapManager
         void Load();
         void Draw(int, int);
 
+        int sum(char);
+
+        bool isRoadside(int, int);
+
+        // member data
         vector<vector<char>> unit;
         int ROW, COL;
 
+        // parameters loaded for engines
         unsigned int time;
         int balance;
 

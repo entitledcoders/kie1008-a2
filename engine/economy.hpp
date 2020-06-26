@@ -1,12 +1,11 @@
 #ifndef ECONOMY_HPP
 #define ECONOMY_HPP
 
-#include "iomanager.hpp"
+#include "../manager/iomanager.hpp"
 
 class Economy
 {
     public:
-
         void load(int m_temp) { balance = m_temp; }
 
         void showBalance();

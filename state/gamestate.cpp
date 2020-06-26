@@ -209,17 +209,13 @@ void GameState::OptionState()
                             {
                                 switch(c)
                                     {
-                                    case 0: map1.unit[row][col]='0';        // ROAD
-                                            plyMoney.deductBalance(50);
+                                    case 0: purchase(row, col, '0');           // ROAD
                                             break;
-                                    case 1: map1.unit[row][col]='a';        // RESIDENTIAL AREA
-                                            plyMoney.deductBalance(500);
+                                    case 1: purchase(row, col, 'a');           // RESIDENTIAL AREA
                                             break;
-                                    case 2: map1.unit[row][col]='d';        // COMMERCIAL AREA
-                                            plyMoney.deductBalance(800);
+                                    case 2: purchase(row, col, 'd');           // COMMERCIAL AREA
                                             break;
-                                    case 3: map1.unit[row][col]='g';        // INDUSTRIAL AREA
-                                            plyMoney.deductBalance(1000);
+                                    case 3: purchase(row, col, 'g');           // INDUSTRIAL AREA
                                     }
                             }
                             else
@@ -240,21 +236,6 @@ void GameState::OptionState()
         }
 }
 
-void GameState::income()
-{
-    int sumfactor = 0;
-    for(int i = 0; i<map1.ROW; i++)
-    {
-        for(int j = 0; j<map1.COL; j++)
-        {
-            if(map1.unit[i][j]=='a') {sumfactor+=1;}
-            if(map1.unit[i][j]=='d') {sumfactor+=3;}
-            if(map1.unit[i][j]=='g') {sumfactor+=7;}
-        }
-    }
-    plyMoney.addBalance(sumfactor*FACTOR);
-}
-
 void GameState::clearMenu(int from, int to)
 {
     for(int i = from; i < to; i++)
@@ -262,4 +243,36 @@ void GameState::clearMenu(int from, int to)
         recursor(2*map1.COL+5, i);
         cout << "                             ";
     }
+}
+
+void GameState::purchase(int x, int y, char type)
+{
+    if(type=='0')
+    {
+        map1.unit[x][y]='0';
+        plyMoney.deductBalance(50);
+    }
+    else if(map1.isRoadside(x, y))
+    {
+        switch(type)
+        {
+            case 'a'    : map1.unit[x][y]='a';        // RESIDENTIAL AREA
+                        plyMoney.deductBalance(500);
+                        break;
+            case 'd':     map1.unit[x][y]='d';        // COMMERCIAL AREA
+                        plyMoney.deductBalance(800);
+                        break;
+            case 'g':     map1.unit[x][y]='g';        // INDUSTRIAL AREA
+                        plyMoney.deductBalance(1000);
+        }
+    }
+    else
+    notify("Please build beside road!", 15);
+}
+
+void GameState::income()
+{
+    int sumfactor = 0;
+    sumfactor = map1.sum('a') + 3*map1.sum('d') +7*map1.sum('g');
+    plyMoney.addBalance(sumfactor*FACTOR);
 }

@@ -27,8 +27,9 @@ private:
     void notify();
     void notify(string, int);
     void OptionState();
-    void income();
     void clearMenu(int, int);
+    void income();
+    void purchase(int, int, char);
 
     bool OptionFlag;
     bool PauseFlag;

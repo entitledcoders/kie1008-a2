@@ -104,3 +104,25 @@ void MapManager::Draw(int x, int y)
         cout << endl;
     }
 }
+
+int MapManager::sum(char type)
+{
+    int sum = 0;
+    for(int i = 0; i<ROW; i++)
+    {
+        for(int j = 0; j<COL; j++)
+        {
+            if(unit[i][j]==type) {sum++;}
+        }
+    }
+    return sum;
+}
+
+bool MapManager::isRoadside(int x, int y)
+{
+    if(x!=0) {if(unit[x-1][y]=='0') {return true;}}
+    if(y!=0) {if(unit[x][y-1]=='0') {return true;}}
+    if(x!=ROW) {if(unit[x+1][y]=='0') {return true;}}
+    if(y!=COL) {if(unit[x][y+1]=='0') {return true;}}
+    return false;
+}

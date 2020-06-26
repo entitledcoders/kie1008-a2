@@ -16,7 +16,7 @@ public:
     signed int getRealSeconds();
     signed int getGameDay();
 
-    int timeSpeed = 0;
+    int timeSpeed;
 
 
 private:

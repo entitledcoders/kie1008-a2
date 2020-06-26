@@ -18,7 +18,7 @@ void Time::pause()
 {
     if(run)
     {
-        tempSeconds += difftime(time(0), startSec);
+        tempSeconds += timeSpeed*difftime(time(0), startSec);
         run = false;
     }
 }
@@ -53,13 +53,13 @@ signed int Time::getRealSeconds()
     else
     {
         realSeconds = difftime(time(0), startSec);
-        return tempSeconds + realSeconds;
+        return tempSeconds + timeSpeed*realSeconds;
     }
 }
 
 signed int Time::getGameDay()
 {
-    return getRealSeconds()/timeSpeed;
+    return getRealSeconds()/15;
 }
 
 bool Time::isRun()

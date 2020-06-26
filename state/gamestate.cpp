@@ -1,13 +1,13 @@
 #include "gamestate.hpp"
 #include <fstream>
 #define FACTOR 1       // income factor
-#define TIMEFACTOR 3
+#define TIMEFACTOR 5
 
 GameState GameState::m_GameState;
 
 void GameState::Init()
 {
-    gameTime.timeSpeed = 1+TIMEFACTOR;
+    gameTime.timeSpeed = TIMEFACTOR;
     system("CLS");
     cout << "(SPACE) Start new game\n(ENTER) Continue where you left off";
     bool flag = true;
@@ -42,7 +42,7 @@ void GameState::Init()
 void GameState::Draw(StateManager* game)
 {
     recursor(2*map1.COL+5, 2);
-    cout << "Day: " << gameTime.getGameDay() << "\tSpeed: (" << 3-(gameTime.timeSpeed-1)/3 << ")\n";
+    cout << "Day: " << gameTime.getGameDay() << "\tSpeed: (" << gameTime.timeSpeed/TIMEFACTOR << ")\n";
     recursor(2*map1.COL+5, 3);
     plyMoney.showBalance();
 
@@ -116,20 +116,21 @@ void GameState::HandleEvents(StateManager* game)
                 case DOWN:  c++;
                             break;
                 case ESC:   PauseFlag = false;
-                            clearMenu(5, 13);
+                            clearMenu(2, 13);
                             break;
                 case ENTER: switch(c)
                             {
-                                case 0: if(gameTime.timeSpeed<3*TIMEFACTOR) {gameTime.timeSpeed-=TIMEFACTOR;}
+                                case 0: if(gameTime.timeSpeed<3*TIMEFACTOR) {gameTime.timeSpeed+=TIMEFACTOR;}
                                         else notify("Maximum speed reached", 2);
                                         break;
-                                case 1: if(gameTime.timeSpeed>1) {gameTime.timeSpeed+=TIMEFACTOR;}
+                                case 1: if(gameTime.timeSpeed>0) {gameTime.timeSpeed-=TIMEFACTOR;}
                                         else notify("Minimum speed reached", 2);
                                         break;
                                 case 2: map1.Update(gameTime.getRealSeconds(), plyMoney.balance);
                                         notify("Game is saved", 2);
                                         break;
                                 case 3: map1.Update(gameTime.getRealSeconds(), plyMoney.balance);
+                                        PauseFlag = false;
                                         game->PopState();
                             }
             }
@@ -200,7 +201,6 @@ void GameState::OptionState()
             case DOWN:  c++;
                         break;
             case ESC:   OptionFlag = false;
-                        gameTime.pause();
                         clearMenu(5, 13);
                         break;
             case ENTER: if(map1.unit[row][col]==' ')

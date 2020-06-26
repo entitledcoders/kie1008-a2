@@ -11,16 +11,12 @@ class GameState : public State
 public:
     void Init();
 
-    void Pause() {};
-    void Resume() {};
-
     void Draw(StateManager* game);
 	void HandleEvents(StateManager* game);
 	void Update(StateManager* game);
 
     static GameState* Instance() {
 		return &m_GameState;
-
 	}
 
 private:
@@ -28,14 +24,21 @@ private:
     MapManager map1;
     Economy plyMoney;
 
+    void notify();
+    void notify(string, int);
+    void OptionState();
     void income();
+    void clearMenu(int, int);
 
-    bool OptionState;
+    bool OptionFlag;
+    bool PauseFlag;
     bool run = false;
 
     int row, col, c;
-    int rowSize, colSize;
     int prevDay;
+    int duration;
+
+    string note;
 
 	static GameState m_GameState;
 };

@@ -18,9 +18,7 @@ void StateManager::ChangeState(State* state)
 void StateManager::PushState(State* state)
 {
 	// pause current state
-	if ( !states.empty() ) {
-		states.top()->Pause();
-	}
+	if ( !states.empty() ) {}
 
 	// store and init the new state
 	states.push(state);
@@ -36,9 +34,7 @@ void StateManager::PopState()
 	}
 
 	// resume previous state
-	if ( !states.empty() ) {
-		states.top()->Resume();
-	}
+	if ( !states.empty() ) {}
 }
 
 void StateManager::Draw()

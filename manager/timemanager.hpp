@@ -16,7 +16,7 @@ public:
     signed int getRealSeconds();
     signed int getGameDay();
 
-    int dayPerSec = 5;
+    int timeSpeed = 0;
 
 private:
     bool run;

@@ -31,6 +31,7 @@ void MapManager::New(string path, int r, int c, bool load)
 
 void MapManager::Load()
 {
+    unit.resize(ROW, vector<char>(COL));
     ifstream mapfile;
     this->isExist();
     mapfile.open(filepath);
@@ -78,24 +79,27 @@ void MapManager::Draw(int x, int y)
             {
             switch (unit[row][col])
                 {
-                    case 'a':   textColor(DARK_GRAY, LIGHT_GREEN);
-                                cursor? cout << "> <": cout << "   ";
+                    case '0':   textColor(WHITE, BLACK);
+                                cursor? cout << "[]": cout << "--";
                                 textColorRestore();
                                 break;
-                    case 'd':   textColor(DARK_GRAY, LIGHT_BLUE);
-                                cursor? cout << "> <": cout << "   ";
+                    case 'a':   textColor(WHITE, GREEN);
+                                cursor? cout << "[]": cout << "  ";
                                 textColorRestore();
                                 break;
-                    case 'g':   textColor(DARK_GRAY, LIGHT_RED);
-                                cursor? cout << "> <": cout << "   ";
+                    case 'd':   textColor(WHITE, BLUE);
+                                cursor? cout << "[]": cout << "  ";
                                 textColorRestore();
                                 break;
-                    default:    cursor? cout << "> <": cout << "[ ]";
+                    case 'g':   textColor(WHITE, RED);
+                                cursor? cout << "[]": cout << "  ";
+                                textColorRestore();
+                                break;
+                    default:    textColor(GREEN, LIGHT_GREEN);
+                                cursor? cout << "[]": cout << "^^";
+                                textColorRestore();
                 }
             }
-            // Cursor
-
-
         }
         cout << endl;
     }

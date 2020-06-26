@@ -23,7 +23,7 @@ class MapManager
         void Load();
         void Draw(int, int);
 
-        char unit[24][20];
+        vector<vector<char>> unit;
         int ROW, COL;
 
         unsigned int time;

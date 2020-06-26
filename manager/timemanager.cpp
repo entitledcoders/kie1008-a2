@@ -59,7 +59,7 @@ signed int Time::getRealSeconds()
 
 signed int Time::getGameDay()
 {
-    return getRealSeconds()/dayPerSec;
+    return getRealSeconds()/timeSpeed;
 }
 
 bool Time::isRun()
